@@ -26,6 +26,19 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+
+    - name: run
     - run: npm install
+
+    - name: Run unit tests
     - run: npm run test:unit
+
+    - name: Print my name
     - run: echo "Stoyan Petkov"
+    
+    - name: Deploy to production
+      uses: johnbeynon/render-deploy-action@v0.0.8
+      with:
+        service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
+        api-key: ${{ secrets.MY_RENDER_API_KEY }}
+        
