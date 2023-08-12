@@ -27,13 +27,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
 
-    - name: run
     - run: npm install
 
-    - name: Run unit tests
     - run: npm run test:unit
 
-    - name: Print my name
     - run: echo "Stoyan Petkov"
     
     - name: Deploy to production
